@@ -17,15 +17,16 @@ function InitializeAll() {
   //document.body.style.backgroundColor = 'fuchsia';
 }
 
-function addItem() {
+function getItemFromUser(isPriority){
   let msg = ''
   msg = prompt('Enter Todo')
-//! TND add "Priority" option to add something to top. Maybe a checkbox
+//! TBD add "Priority" option to add something to top. Maybe a checkbox
   if(msg !== '')
-    newTodo(msg, false);  // true = add at top; false = add at bottom
+    addNewItemToList(msg, isPriority);  // true = add at top else add at bottom
 }
 
-function newTodo(msg, pri) {
+function addNewItemToList
+(msg, pri) {
  
   const newItem = document.createElement('li')
   newItem.textContent = msg
